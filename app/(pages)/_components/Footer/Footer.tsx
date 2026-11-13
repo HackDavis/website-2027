@@ -25,35 +25,48 @@ export default function Footer({ variant = 'about-us' }: FooterProps) {
   const logoStyles =
     'h-6 text-white transition hover:text-gray-300 break-400:h-7 md:h-8 lg:h-8 xl:h-10 2xl:h-15';
 
-  const isIndex = variant === 'index';
-  const bgColor = isIndex ? 'bg-[#B07249]' : 'bg-[#B07249]';
+  // Wall + wooden table drawn behind the transparent decor SVG
+  const tableBg =
+    'bg-[#8E6346] bg-[repeating-linear-gradient(to_bottom,transparent_0,transparent_calc(10vw-6px),#A0714F_calc(10vw-6px),#A0714F_10vw)]';
 
   return (
-    <footer className={`relative flex w-full h-70 flex-col z-10 ${bgColor}`}>
-      {/* Content Container */}
-      <div className="mx-auto mt-[20%] flex w-3/4 flex-col items-center justify-around gap-8 break-400:mt-[7%] break-625:gap-12 md:mt-[7%] lg:relative lg:my-[5%] lg:flex-row lg:justify-between lg:gap-0 lg:px-0">
+    <footer
+      className={`relative z-10 flex w-full flex-col overflow-hidden ${tableBg}`}
+      data-variant={variant}
+    >
+      <div className="relative w-full bg-[linear-gradient(to_bottom,#EDCF9F_0,#EDCF9F_40%,transparent_40%)]">
+        <Image
+          src="/Footer/FooterDecor.svg"
+          alt=""
+          aria-hidden
+          className="relative pr-[10%] pl-[10%] pt-[10%] block h-auto w-full"
+          width={1299}
+          height={910}
+        />
+      </div>
+
+      {/* Content row */}
+      <div className="relative flex w-full flex-col items-center gap-8 px-[8%] pt-10 pb-14 lg:flex-row lg:pt-0 lg:pb-[6%] lg:justify-between lg:gap-0">
         {/* HackDavis Logo */}
-        <div
-          className={`flex w-full flex-row items-center justify-center gap-4 lg:w-1/3 z-10 ${bgColor}`}
-        >
+        <div className="flex w-2/3 flex-row items-center gap-3 sm:w-1/2 lg:w-1/4">
           <Image
             src="/Footer/hdLogoWhite.svg"
             alt="HackDavis Logo"
-            className="w-1/3"
+            className="w-1/4"
             width={92.5}
             height={92.7}
           />
           <Image
             src="/Footer/hdLogoMottoUpdated.svg"
             alt="HackDavis name and motto"
-            className="w-2/3"
+            className="w-3/4"
             width={226}
             height={71.55}
           />
         </div>
 
         {/* Social Icons */}
-        <div className="flex w-full flex-col items-center gap-2 px-5 break-400:w-11/12 break-625:gap-4 lg:w-1/3 lg:px-0">
+        <div className="flex w-full flex-col items-center gap-2 px-5 break-400:w-11/12 break-625:gap-4 lg:w-1/4 lg:px-0">
           <div className="flex w-full flex-row items-center justify-between pt-2 pb-4">
             <a
               className={`aspect-square ${logoStyles}`}
@@ -103,13 +116,13 @@ export default function Footer({ variant = 'about-us' }: FooterProps) {
             </a>
           </div>
           <p className="pb-4 text-center font-metropolis text-xs text-white break-625:text-sm md:pb-6 md:text-base lg:pb-0 lg:text-sm xl:text-base 2xl:text-2xl">
-            &copy; 2026 HackDavis • Made with ☕️ & 💛 in Davis
+            &copy; 2027 HackDavis • Made with ☕️ & 💛 in Davis
           </p>
         </div>
 
         {/* Back to Top Arrow */}
         <div
-          className="md-4 lg-8 absolute right-6 top-6 sm:top-8 md:top-10 flex cursor-pointer flex-row items-center gap-2 text-white transition-transform hover:scale-110 lg:relative lg:right-0 lg:top-0 lg:w-fit lg:justify-end lg:gap-3 2xl:gap-4"
+          className="flex w-fit cursor-pointer flex-row items-center gap-2 text-white transition-transform hover:scale-110 lg:w-1/4 lg:justify-end lg:gap-3 2xl:gap-4"
           onClick={scrollToTop}
         >
           <p className="text-xs break-400:text-sm sm:text-base lg:text-lg 2xl:text-3xl">
