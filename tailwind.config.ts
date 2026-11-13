@@ -8,7 +8,20 @@ export default {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      'break-400': '400px',
+      'break-625': '625px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
+      spacing: {
+        '15': '3.75rem',
+        '70': '17.5rem',
+      },
       fontFamily: {
         inter: ['var(--font-inter)', 'arial'],
         montserrat: ['var(--font-montserrat)', 'arial'],
