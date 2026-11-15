@@ -59,11 +59,98 @@
   font-display: swap;
 }
 :root {
-  --background: #ffffff;
+  /* Brand colors */
+  --color-white: #ffffff;
+  --color-light-livid: #e5eef1;
+  --color-livid: #a6bfc7;
+  --color-teal-1: #005271;
+  --color-teal-2: #173a52;
+  --color-teal-3: #123041;
+  --color-black: #000000;
+  --color-duck-bg: #ffc53d;
+  --color-orange: #ffa740;
+  --color-rabbit-bg: #ffc5ab;
+  --color-salmon: #efa482;
+  --color-cow-bg: #9ee7e5;
+  --color-sky: #79ccd9;
+  --color-lake: #4db7d9;
+  --color-frog-bg: #afd157;
+  --color-leaf: #a1b943;
+  --color-leaf-shaded: #84a44d;
+  --color-emerald: #347162;
+  /* Brand gradient */
+  --gradient-brand-start: #d5fcd1;
+  --gradient-brand-middle: #b2e7dd;
+  --gradient-brand-end: #76d6e6;
+  --gradient-brand: linear-gradient(
+    to left,
+    var(--gradient-brand-start) 0%,
+    var(--gradient-brand-middle) 50%,
+    var(--gradient-brand-end) 100%
+  );
+
+  /* Typography */
+  --font-metropolis: 'Metropolis', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --type-line-height: 1.25;
+  --type-letter-spacing: 0.02em;
+  --type-title-size: 2.625rem;
+  --type-header-1-size: 2rem;
+  --type-header-2-size: 1.75rem;
+  --type-header-3-size: 1.5rem;
+  --type-subtitle-1-size: 1.125rem;
+  --type-subtitle-2-size: 0.875rem;
+  --type-body-size: 1rem;
+  --type-button-size: 0.875rem;
+  --type-button-line-height: normal;
+
+  /* Corner radii and button sizing */
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-pill: 100px;
+  --button-height: 48px;
+  --button-padding-inline: 20px;
+  --button-icon-gap: 8px;
+  --button-short-label-ratio: 0.5;
+  --button-long-label-ratio: 0.375;
+  --button-muted-opacity: 0.5;
+  --button-faint-opacity: 0.25;
+
+  /* Button colors */
+  --button-primary-text: var(--color-white);
+  --button-primary-bg: var(--color-teal-1);
+  --button-primary-active-bg: #0e2535;
+  --button-primary-disabled-bg: #89adbb;
+  --button-primary-label-bg: var(--color-teal-3);
+  --button-primary-label-active-bg: var(--color-teal-3);
+  --button-primary-label-disabled-bg: #919ea6;
+  --button-secondary-text: var(--color-teal-1);
+  --button-secondary-bg: var(--color-white);
+  --button-secondary-active-bg: var(--color-cow-bg);
+  --button-secondary-border: var(--color-teal-1);
+  --button-secondary-disabled-bg: #f9f9f9;
+  --button-secondary-disabled-text: var(--button-primary-disabled-bg);
+  --button-secondary-disabled-border: var(--button-secondary-disabled-text);
+  --button-tertiary-text: var(--button-secondary-text);
+  --button-tertiary-bg: var(--button-secondary-bg);
+  --button-tertiary-active-bg: var(--button-secondary-active-bg);
+  --button-tertiary-disabled-bg: var(--button-secondary-disabled-bg);
+  --button-tertiary-disabled-text: var(--button-secondary-disabled-text);
+
+  /* Site colors */
+  --background: var(--color-white);
   --foreground: #171717;
 
-  --font-metropolis: 'Metropolis', sans-serif;
-  --text-dark-blue: #005271;
+  --background-primary: var(--color-teal-2);
+  --background-secondary: var(--color-teal-1);
+  --background-tertiary: var(--color-light-livid);
+  --background-light: var(--color-white);
+  --text-light: var(--color-white);
+  --text-dark: var(--color-teal-3);
+  --text-dark-blue: var(--color-teal-1);
 
   /* Header nav pill */
   --navbar-bg: #e5eef180;
@@ -110,4 +197,38 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --type-title-size: 4.5rem;
+    --type-header-1-size: 3rem;
+    --type-header-2-size: 2.25rem;
+    --type-header-3-size: 1.75rem;
+    --type-subtitle-1-size: 1.25rem;
+    --type-subtitle-2-size: 1rem;
+    --type-body-size: 1.25rem;
+    --type-button-size: 1.125rem;
+  }
+}
+
+@each $role, $weight in (title: extrabold, header-1: bold, header-2: bold, header-3: bold) {
+  .type-#{$role} {
+    font: var(--font-weight-#{$weight}) var(--type-#{$role}-size) /
+      var(--type-line-height) var(--font-metropolis);
+    letter-spacing: var(--type-letter-spacing);
+  }
+}
+
+@each $role, $weight, $line-height in (
+  (subtitle-1, semibold, type-line-height),
+  (subtitle-2, regular, type-line-height),
+  (body, regular, type-line-height),
+  (button, bold, type-button-line-height)
+) {
+  .type-#{$role} {
+    font: var(--font-weight-#{$weight}) var(--type-#{$role}-size) /
+      var(--#{$line-height}) var(--font-plus-jakarta-sans, var(--font-metropolis));
+    letter-spacing: var(--type-letter-spacing);
+  }
 }
