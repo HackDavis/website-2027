@@ -9,6 +9,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@szhsin/react-accordion": "^1.4.4",
     "autoprefixer": "^10.4.20",
     "next": "16.4.5",
     "react": "^19.3.1",
