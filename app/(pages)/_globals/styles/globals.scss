@@ -92,6 +92,7 @@
   /* Typography */
   --font-metropolis: 'Metropolis', sans-serif;
   --font-weight-regular: 400;
+  --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
@@ -151,6 +152,10 @@
   --text-light: var(--color-white);
   --text-dark: var(--color-teal-3);
   --text-dark-blue: var(--color-teal-1);
+
+  /* Stats section (Figma 222:2143); not in the Design System palette..... */
+  --color-cream: #ffecc0;
+  --stat-label-scale: 0.561; /* label font-size relative to its number */
 
   /* Header nav pill */
   --navbar-bg: #e5eef180;
