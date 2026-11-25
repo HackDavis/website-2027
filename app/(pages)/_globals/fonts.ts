@@ -1,4 +1,9 @@
-import { Inter, Montserrat, Plus_Jakarta_Sans } from 'next/font/google';
+import {
+  DM_Mono,
+  Inter,
+  Montserrat,
+  Plus_Jakarta_Sans,
+} from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,7 +20,14 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   variable: '--font-plus-jakarta-sans',
 });
 
-const fonts = [inter, montserrat, plusJakartaSans];
+// Stats section only from what I can tell.. (Figma 222:2143)
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-dm-mono',
+});
+
+const fonts = [inter, montserrat, plusJakartaSans, dmMono];
 
 const font_variables = fonts.map((font) => font.variable);
 const font_string = font_variables.join(' ');

@@ -13,6 +13,7 @@ export default {
         inter: ['var(--font-inter)', 'arial'],
         montserrat: ['var(--font-montserrat)', 'arial'],
         metropolis: ['var(--font-metropolis)'],
+        dmmono: ['var(--font-dm-mono)', 'monospace'],
       },
       colors: {
         background: 'var(--background)',
