@@ -18,6 +18,21 @@ export default {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      keyframes: {
+        'float-bob': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-2vw)' },
+        },
+        'float-sway': {
+          '0%, 100%': { transform: 'translateX(-1vw)' },
+          '50%': { transform: 'translateX(3vw)' },
+        },
+      },
+
+      animation: {
+        'float-bob': 'float-bob 10s ease-in-out infinite',
+        'float-sway': 'float-sway 25s ease-in-out infinite',
+      },
     },
   },
   plugins: [
