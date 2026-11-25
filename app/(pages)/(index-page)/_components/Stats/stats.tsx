@@ -32,6 +32,7 @@ import orange_projects from '@public/Images/stats/orange-projects.svg';
 import dot from '@public/Images/stats/dot.svg';
 import dots_hours from '@public/Images/stats/dots-hours.svg';
 import dot_prizes from '@public/Images/stats/dot-prizes.svg';
+import CountUp from './CountUp';
 
 // Each orange is a size container: its number's font-size is a % of the
 // orange (cqw) so text scales with the art; labels derive from the number.
@@ -135,7 +136,9 @@ export default function Stats() {
           <div className="absolute left-[-7.62%] top-[-1.76%] w-[107.62%]">
             <Image src={orange_hours} alt="" className="w-full h-auto" />
           </div>
-          <p className={`${STAT_NUMBER} left-[48.52%] top-[23.69%]`}>24</p>
+          <p className={`${STAT_NUMBER} left-[48.52%] top-[23.69%]`}>
+            <CountUp to={24} />
+          </p>
           <p className={`${STAT_LABEL} left-[47.48%] top-[56.89%]`}>hours</p>
           <div className="absolute left-[82.66%] top-[57.1%] w-[9.79%]">
             <Image src={dots_hours} alt="" className="w-full h-auto" />
@@ -149,7 +152,9 @@ export default function Stats() {
           <div className="absolute left-[-4.97%] top-[-1.15%] w-[104.97%]">
             <Image src={orange_attendees} alt="" className="w-full h-auto" />
           </div>
-          <p className={`${STAT_NUMBER} left-[43.83%] top-[29.83%]`}>750+</p>
+          <p className={`${STAT_NUMBER} left-[43.83%] top-[29.83%]`}>
+            <CountUp to={750} suffix="+" />
+          </p>
           <p className={`${STAT_LABEL} left-[50.9%] top-[55.06%]`}>attendees</p>
           <div className="absolute left-[68.86%] top-[80.28%] w-[3.06%]">
             <Image src={dot} alt="" className="w-full h-auto" />
@@ -172,7 +177,9 @@ export default function Stats() {
           <div className="absolute left-[-8.21%] top-[-1.89%] w-[108.21%]">
             <Image src={orange_prizes} alt="" className="w-full h-auto" />
           </div>
-          <p className={`${STAT_NUMBER} left-[50.44%] top-[25.91%]`}>$15k</p>
+          <p className={`${STAT_NUMBER} left-[50.44%] top-[25.91%]`}>
+            <CountUp to={15} prefix="$" suffix="k" />
+          </p>
           <p className={`${STAT_LABEL} left-[50.2%] top-[55.99%]`}>prizes</p>
           <div className="absolute left-[90.72%] top-[59.56%] w-[3.28%]">
             <Image src={dot_prizes} alt="" className="w-full h-auto" />
@@ -192,7 +199,9 @@ export default function Stats() {
           <div className="absolute left-[-6.39%] top-[-1.48%] w-[106.39%]">
             <Image src={orange_projects} alt="" className="w-full h-auto" />
           </div>
-          <p className={`${STAT_NUMBER} left-[48.92%] top-[27.42%]`}>150+</p>
+          <p className={`${STAT_NUMBER} left-[48.92%] top-[27.42%]`}>
+            <CountUp to={150} suffix="+" />
+          </p>
           <p className={`${STAT_LABEL} left-[48.74%] top-[54.01%]`}>projects</p>
           <div className="absolute left-[70.14%] top-[76.12%] w-[3.94%]">
             <Image src={dot} alt="" className="w-full h-auto" />
