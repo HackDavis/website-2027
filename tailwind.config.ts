@@ -1,6 +1,9 @@
 import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 
+const SWAY_DEG = 1.5; // max tilt each way
+const SWAY_SECONDS = 1.6; // one swing
+
 export default {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -19,10 +22,24 @@ export default {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      // Pendulum sway: -SWAY_DEG <-> +SWAY_DEG
+      keyframes: {
+        wiggle: {
+          from: { transform: `rotate(-${SWAY_DEG}deg)` },
+          to: { transform: `rotate(${SWAY_DEG}deg)` },
+        },
+      },
+      animation: {
+        wiggle: `wiggle ${SWAY_SECONDS}s ease-in-out calc(var(--sway-delay, 0s) - ${
+          SWAY_SECONDS / 2
+        }s) infinite alternate`,
+      },
     },
   },
   plugins: [
-    plugin(({ addUtilities }) => {
+    plugin(({ addUtilities, addVariant }) => {
+      addVariant('can-hover', '@media (hover: hover)');
+
       addUtilities({
         // Frosted-glass nav pill (used by Header on non-home pages)
         '.glass-pill': {
