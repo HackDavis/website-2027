@@ -1,0 +1,22 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="115.3" height="119.526" viewBox="0 0 115.3 119.526" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Orange">
+<g id="Orange_2" filter="url(#filter0_d_0_248)">
+<circle cx="58.8576" cy="55.8392" r="55.8392" fill="#E89425"/>
+</g>
+<circle id="Dot" cx="92.9651" cy="35.318" r="2.41467" fill="#D77B03"/>
+<circle id="Dot_2" cx="86.3246" cy="28.074" r="2.41467" fill="#D77B03"/>
+<circle id="Dot_3" cx="81.4954" cy="35.318" r="2.41467" fill="#D77B03"/>
+</g>
+<defs>
+<filter id="filter0_d_0_248" x="-7.43894e-08" y="0" width="115.3" height="119.526" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="1.811" operator="dilate" in="SourceAlpha" result="effect1_dropShadow_0_248"/>
+<feOffset dx="-1.20733" dy="6.03667"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.843137 0 0 0 0 0.482353 0 0 0 0 0.0117647 0 0 0 1 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_248"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_248" result="shape"/>
+</filter>
+</defs>
+</svg>
