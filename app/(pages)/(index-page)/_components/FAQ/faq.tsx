@@ -98,14 +98,14 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative w-full overflow-x-clip pt-[60vw] bg-[url('/Images/faq/faq_bg.svg')] bg-no-repeat bg-[position:top_center] bg-cover"
+      className="relative w-full overflow-x-clip pt-[50vw] bg-[url('/Images/faq/faq_bg.svg')] bg-no-repeat bg-[position:top_center] bg-cover"
     >
       <Image
         src="/Images/faq/top_cloud_back.svg"
         alt="cloud"
         width={1200}
         height={600}
-        className="absolute top-[30vw] -left-[30vw] md:left-[8vw] w-[75vw] md:w-[50vw] ..."
+        className="absolute top-[10vw] left-[-25vw] w-[75vw] md:top-[20vw] md:left-[8vw] md:w-[50vw] pointer-events-none animate-float-sway [--sway:0.5vw] will-change-transform"
       />
 
       <Image
@@ -113,7 +113,7 @@ export default function FAQ() {
         alt="cloud"
         width={1200}
         height={600}
-        className="absolute top-[36vw] -left-[30vw] md:left-[11vw] w-[75vw] md:w-[50vw] ..."
+        className="absolute top-[16vw] left-[-30vw] w-[75vw] md:top-[26vw] md:left-[11vw] md:w-[50vw] pointer-events-none animate-float-sway [--sway:2vw] [animation-duration:20s] [animation-direction:reverse] will-change-transform"
       />
 
       <Image
@@ -121,7 +121,7 @@ export default function FAQ() {
         alt="bird"
         width={1200}
         height={600}
-        className="absolute top-[18vw] right-[20vw] w-[11vw] pointer-events-none animate-float-bob [animation-direction:reverse]"
+        className="absolute top-[25vw] md:top-[28vw] right-[20vw] w-[18vw] md:w-[11vw] pointer-events-none animate-float-bob [animation-direction:reverse]"
       />
 
       <Image
@@ -129,7 +129,7 @@ export default function FAQ() {
         alt="bird"
         width={1200}
         height={600}
-        className="absolute top-[30vw] right-[12vw] w-[13vw] pointer-events-none animate-float-bob"
+        className="absolute top-[45vw] md:top-[40vw] right-[-3vw] md:right-[12vw] w-[22vw] md:w-[13vw] pointer-events-none animate-float-bob"
       />
 
       <div className="px-[13vw]">
@@ -187,13 +187,13 @@ export default function FAQ() {
           </Accordion>
         </div>
       </div>
-      
+
       <Image
         src="/Images/faq/bottom_cloud_back.svg"
         alt="cloud"
         width={1200}
         height={600}
-        className="hidden md:block absolute overflow-x-hidden top-[50vw] right-0 w-[35vw] pointer-events-none animate-float-sway [--sway:0.5vw] will-change-transform"
+        className="hidden md:block absolute overflow-x-hidden top-[60vw] right-[-4vw] w-[35vw] pointer-events-none animate-float-sway [--sway:0.5vw] will-change-transform"
       />
 
       <Image
@@ -201,7 +201,7 @@ export default function FAQ() {
         alt="cloud"
         width={1200}
         height={600}
-        className="hidden md:block absolute overflow-x-hidden top-[55vw] right-0 w-[40vw] pointer-events-none animate-float-sway [--sway:2vw] [animation-duration:20s] [animation-direction:reverse] will-change-transform"
+        className="hidden md:block absolute overflow-x-hidden top-[65vw] right-[-4vw] w-[40vw] pointer-events-none animate-float-sway [--sway:2vw] [animation-duration:20s] [animation-direction:reverse] will-change-transform"
       />
 
       <Image
@@ -220,6 +220,13 @@ export default function FAQ() {
         className="relative block ml-auto mt-[4vw] w-[95vw] md:w-[75vw] h-auto pointer-events-none"
       />
 
+      <Image
+        src="/Images/faq/fish.svg"
+        alt="fish"
+        width={1200}
+        height={600}
+        className="absolute ml-auto mt-[4vw] bottom-[21vw] left-[4vw] w-[30vw] md:bottom-[16vw] md:right-[51vw] md:w-[24vw] h-auto pointer-events-none animate-fish-wiggle"
+      />
     </section>
   );
 }
