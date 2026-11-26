@@ -1,0 +1,16 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1447.79" height="1938" viewBox="0 0 1447.79 1938" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="UnderWater">
+<path d="M199.232 193.72C91.4345 180.637 0 0 0 0V671.603H1447.79V236.899C1447.79 236.899 1412.73 153.459 1047.57 214.143C982.136 225.017 858.261 62.2613 690.008 53.0981C506.84 43.1227 367.498 214.143 199.232 193.72Z" fill="url(#paint0_linear_0_266)"/>
+<path d="M0 670.583H1447.79V1938H0V670.583Z" fill="url(#paint1_linear_0_266)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_266" x1="723.894" y1="0" x2="723.894" y2="1938" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9FDEFF"/>
+<stop offset="1" stop-color="#40BCED"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_266" x1="723.894" y1="0" x2="723.894" y2="1938" gradientUnits="userSpaceOnUse">
+<stop stop-color="#9FDEFF"/>
+<stop offset="1" stop-color="#40BCED"/>
+</linearGradient>
+</defs>
+</svg>
