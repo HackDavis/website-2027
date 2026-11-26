@@ -1,0 +1,190 @@
+@use '../../../_globals/styles/mixins' as *;
+
+// Each stage is laid out on its own Figma artboard (--artboard, set inline:
+// 1440 for desktop, 393 for mobile). --u is one design pixel expressed
+// relative to the section width, so everything scales together.
+
+.section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.stage {
+  --u: calc(100cqw / var(--artboard));
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+
+.desktop {
+  --bubble-rise: -140;
+  --float-range: 12;
+}
+
+.mobile {
+  --bubble-rise: -60;
+  --float-range: 6;
+  display: none;
+}
+
+@include phone {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
+.piece {
+  position: absolute;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  position: relative;
+  flex: none;
+}
+
+.imgWrap {
+  position: absolute;
+  inset: 0;
+}
+
+// Figma "Color adjust" effect with saturation -100 (sRGB luma mix), which is
+// exactly what grayscale(1) computes.
+.grayscale {
+  filter: grayscale(1);
+}
+
+.pebble {
+  border-radius: 100px 100px 0 0;
+}
+
+.pill {
+  border-radius: 9999px;
+}
+
+.frog {
+  overflow: clip;
+}
+
+// ---------------------------------------------------------------- carousel
+.fishRow {
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+// Mirrored rows face right; the same leftward track animation then reads
+// as swimming right.
+.mirrored {
+  transform: scaleX(-1);
+}
+
+.track {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: swim 36s linear infinite;
+}
+
+.fish {
+  position: relative;
+  flex: none;
+  height: 100%;
+}
+
+.fishBody,
+.fishLogo {
+  position: absolute;
+}
+
+.logoImg {
+  object-fit: cover;
+}
+
+// Track holds 4 identical sets; shifting by one set loops seamlessly.
+@keyframes swim {
+  to {
+    transform: translateX(-25%);
+  }
+}
+
+// -------------------------------------------------------------- ambience
+.sway {
+  transform-origin: 50% 100%;
+  animation: sway 4s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(-3deg);
+  }
+  to {
+    transform: rotate(3deg);
+  }
+}
+
+.bubble {
+  animation: bubble 4s ease-in infinite;
+}
+
+@keyframes bubble {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(var(--u) * var(--bubble-rise)));
+    opacity: 0;
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(calc(var(--u) * var(--float-range) * -1));
+  }
+  to {
+    transform: translateY(calc(var(--u) * var(--float-range)));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track,
+  .sway,
+  .bubble,
+  .float {
+    animation: none;
+  }
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
